@@ -25,6 +25,12 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  callback = function()
+    require("nvim-tree.api").tree.open()
+  end,
+})
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
