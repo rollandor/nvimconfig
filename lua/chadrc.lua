@@ -8,6 +8,13 @@ local M = {}
 M.base46 = {
 	theme = "vscode_dark",
 
+	-- Keep syntax colors in diff buffers; highlight changes with backgrounds.
+	hl_override = {
+		DiffAdd = { fg = "NONE" },
+		DiffChange = { fg = "NONE" },
+		DiffText = { fg = "NONE" },
+	},
+
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },

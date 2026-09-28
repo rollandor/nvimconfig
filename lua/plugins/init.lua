@@ -28,4 +28,15 @@ return {
       },
     },
   },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = function(_, opts)
+      opts.filters = opts.filters or {}
+      opts.filters.exclude = opts.filters.exclude or {}
+      table.insert(opts.filters.exclude, "/%.env[^/]*$")
+
+      return opts
+    end,
+  },
 }
