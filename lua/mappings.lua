@@ -12,3 +12,8 @@ map("i", "jk", "<ESC>")
 -- Build the selected main package in the current Go module.
 map("n", "<F5>", function() require("configs.go_build").build() end, { desc = "Go build binary" })
 vim.api.nvim_create_user_command("GoBuild", function() require("configs.go_build").build() end, {})
+
+-- Option + Shift + F (terminal must send Option as Alt/Meta).
+map({ "n", "i", "x" }, "<M-F>", function()
+  require("conform").format { async = true }
+end, { desc = "Format buffer without saving" })
