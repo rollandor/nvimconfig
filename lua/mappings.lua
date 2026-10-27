@@ -1,5 +1,9 @@
 require "nvchad.mappings"
 
+-- NvChad maps Ctrl+C to copying the whole file to the system clipboard.
+-- Remove it to retain regular Vim clipboard behavior.
+vim.keymap.del("n", "<C-c>")
+
 -- add yours here
 
 local map = vim.keymap.set
